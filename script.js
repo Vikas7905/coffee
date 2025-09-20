@@ -16,7 +16,7 @@ navLinks.forEach(link => {
 let coolDown = false;
 let clickSound = ()=>{
   if(coolDown) return;
-  const sound = new Audio('images/click-sound-effect-hd_Zw60kwUZ.mp3');
+  const sound = new Audio('./images/click-sound-effect-hd_Zw60kwUZ.mp3');
   sound.play();
   coolDown = true;
 
