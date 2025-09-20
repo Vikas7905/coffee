@@ -13,6 +13,29 @@ navLinks.forEach(link => {
   })
 })
 
+let coolDown = false;
+let clickSound = ()=>{
+  if(coolDown) return;
+  const sound = new Audio('images/click-sound-effect-hd_Zw60kwUZ.mp3');
+  sound.play();
+  coolDown = true;
+
+  setTimeout(()=>{
+    coolDown = false;
+  },150)
+}
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    clickSound();
+  })
+})
+
+let form = document.querySelectorAll(".form-input");
+
+form.forEach(type =>{
+  type.addEventListener("keydown", clickSound)
+})
+
 const swiper = new Swiper('.slider-wrapper', {
   // Optional parameters
 
